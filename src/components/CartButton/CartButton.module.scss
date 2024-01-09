@@ -1,0 +1,27 @@
+.button {
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+	background-color: #3e0252;
+	min-width: 260px;
+	padding: 8px 10px;
+	border-radius: 25px;
+	transition: 0.4s all;
+	.title {
+		color: #fff;
+		font-weight: 700;
+	}
+	.amount {
+		background-color: #9e14d3;
+		color: #fff;
+		font-weight: 700;
+		padding: 2px 15px;
+		border-radius: 20px;
+		margin-left: 8px;
+	}
+	&:hover {
+		background-color: #76368b;
+	}
+}
