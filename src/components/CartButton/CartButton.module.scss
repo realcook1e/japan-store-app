@@ -21,7 +21,8 @@
 		border-radius: 20px;
 		margin-left: 8px;
 	}
-	&:hover {
+	&:hover,
+	&:focus {
 		background-color: #76368b;
 	}
 }

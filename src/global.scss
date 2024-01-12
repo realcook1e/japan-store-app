@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap");
+
 :root {
-	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-family: "Noto Sans JP", sans-serif;
 	line-height: 1.5;
 	font-weight: 400;
 
@@ -19,6 +21,7 @@
 
 body {
 	margin: 0;
+	padding-bottom: 30px;
 }
 
 a {
@@ -57,7 +60,7 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
 	:root {
-		color: #213547;
+		color: #000;
 		background-color: #ffffff;
 	}
 	a:hover {

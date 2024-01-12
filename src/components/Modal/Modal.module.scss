@@ -1,0 +1,44 @@
+.modal {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 100;
+
+	.dialog {
+		padding: 20px 15px;
+		.controls {
+			display: flex;
+			justify-content: flex-end;
+			gap: 15px;
+			button {
+				border-radius: 25px;
+				padding: 8px 32px;
+				outline: none;
+				transition: 0.3s all;
+			}
+			.close {
+				border: 1px solid #5f067f;
+				color: #5f067f;
+				&:hover,
+				&:active {
+					background-color: rgb(228, 225, 225);
+				}
+			}
+			.action {
+				border: transparent;
+				color: white;
+				background-color: #5f067f;
+				&:hover,
+				&:active {
+					background-color: #3e0252;
+				}
+			}
+		}
+	}
+}

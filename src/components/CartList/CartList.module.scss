@@ -1,0 +1,21 @@
+.content {
+	margin-bottom: 20px;
+	width: 700px;
+	.items {
+		p {
+			font-size: 22px;
+			text-align: center;
+			font-weight: 700;
+		}
+	}
+}
+
+.total {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 30px;
+	span {
+		font-size: 22px;
+		font-weight: 900;
+	}
+}

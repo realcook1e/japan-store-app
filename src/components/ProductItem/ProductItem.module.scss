@@ -2,8 +2,15 @@
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 1px solid #d4d4d4;
+	padding: 12px 0;
+	line-height: 1.7;
 	.title {
 		margin: 0;
+	}
+	.price {
+		color: #5c0a75;
+		font-size: 20px;
+		font-weight: 900;
 	}
 	.controls {
 		display: flex;
@@ -13,8 +20,25 @@
 				font-weight: 700;
 				margin-right: 15px;
 			}
-			input {
-				width: 50px;
+		}
+		button {
+			cursor: pointer;
+			margin-top: 15px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			align-self: flex-end;
+			background-color: #620780;
+			border-radius: 25px;
+			color: #fff;
+			font-weight: 700;
+			transition: 0.3s all;
+			padding: 5px 30px;
+			border: transparent;
+			outline: transparent;
+			&:hover,
+			&:active {
+				background-color: #3e0252;
 			}
 		}
 	}
