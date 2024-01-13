@@ -1,15 +1,16 @@
 import "./Input.module.scss";
 
 const Input = props => {
-	const { style = {}, options = {}, value, onChange, onInput } = props;
+	const { style = {}, options = {}, value, label } = props;
 	return (
-		<input
-			onChange={onInput}
-			onBlur={onChange}
-			style={style}
-			value={value}
-			{...options}
-		/>
+		<>
+			<label htmlFor={options.id}>{label}</label>
+			<input
+				style={style}
+				value={value}
+				{...options}
+			/>
+		</>
 	);
 };
 

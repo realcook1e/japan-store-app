@@ -30,11 +30,16 @@ const ProductItem = ({ id, name, description, price }) => {
 				onSubmit={addToCartHandler}
 			>
 				<div className={styles.input}>
-					<label htmlFor='amount'>Количество</label>
 					<Input
-						onInput={amountChangeHandler}
+						label='Количество'
 						style={{ width: "50px" }}
-						options={{ min: 1, type: "number", name: "amount", id: "amount" }}
+						options={{
+							min: 1,
+							type: "number",
+							name: "amount",
+							id: `amount-${id}`,
+							onInput: amountChangeHandler,
+						}}
 						value={amountInput}
 					></Input>
 				</div>
