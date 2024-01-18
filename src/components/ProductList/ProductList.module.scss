@@ -5,4 +5,24 @@
 	.list {
 		padding: 28px 40px;
 	}
+	.error {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		font-size: 22px;
+		color: red;
+		padding: 28px 40px;
+		min-height: 360px;
+	}
+
+	.empty {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		font-size: 22px;
+		padding: 28px 40px;
+		min-height: 360px;
+	}
 }

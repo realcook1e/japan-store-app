@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { PRODUCTS } from "../products";
 
-const useCart = () => {
-	const [cart, setCart] = useState({ products: [], totalAmount: 0, totalPrice: 0 });
+const initialState = { products: [], totalAmount: 0, totalPrice: 0 };
+
+const useCart = dishes => {
+	const [cart, setCart] = useState(initialState);
 
 	const addToCartHandler = (id, amount) => {
 		setCart(prev => {
@@ -20,7 +21,7 @@ const useCart = () => {
 					totalPrice: prev.totalPrice + +amount * findProduct.price,
 				};
 			} else {
-				const productToAdd = PRODUCTS.find(product => product._id === id);
+				const productToAdd = dishes.find(product => product._id === id);
 				return {
 					products: [...productsInCart, { ...productToAdd, amount: +amount }],
 					totalAmount: prev.totalAmount + +amount,
@@ -74,7 +75,11 @@ const useCart = () => {
 		});
 	};
 
-	return [addToCartHandler, decreaseAmountHandler, increaseAmountHandler, cart];
+	const clearCart = () => {
+		setCart(initialState);
+	};
+
+	return [addToCartHandler, decreaseAmountHandler, increaseAmountHandler, clearCart, cart];
 };
 
 export default useCart;

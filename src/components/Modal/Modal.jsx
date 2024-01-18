@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Card from "../../UI/Card/Card";
 import styles from "./Modal.module.scss";
 
-const Modal = ({ actionLabel, children, onCloseModal }) => {
+const Modal = ({ actionLabel, children, onCloseModal, onCreateOrder }) => {
 	useEffect(() => {
 		document.body.style.overflow = "hidden";
 
@@ -31,7 +31,16 @@ const Modal = ({ actionLabel, children, onCloseModal }) => {
 						>
 							Закрыть
 						</button>
-						<button className={styles.action}>{actionLabel}</button>
+						{actionLabel ? (
+							<button
+								className={styles.action}
+								onClick={onCreateOrder}
+							>
+								{actionLabel}
+							</button>
+						) : (
+							""
+						)}
 					</div>
 				</div>
 			</Card>

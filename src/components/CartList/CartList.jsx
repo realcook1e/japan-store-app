@@ -4,7 +4,7 @@ import { CartContext } from "../../context/CartContext";
 
 import styles from "./CartList.module.scss";
 
-const CartList = () => {
+const CartList = ({ orderResponse, orderStatus }) => {
 	const context = useContext(CartContext);
 
 	const totalPrice = context.cart.totalPrice < 0 ? "0.00" : context.cart.totalPrice.toFixed(2);
@@ -18,10 +18,18 @@ const CartList = () => {
 		/>
 	));
 
+	const responseClass = orderStatus === "ordered" ? styles.success : styles.error;
+
 	return (
 		<div className={styles.content}>
 			<div className={styles.items}>
-				{cartItems.length ? cartItems : <p>Корзина пуста</p>}
+				{orderStatus === "unordered" && cartItems.length > 0 && cartItems}
+				{orderStatus === "unordered" && cartItems.length === 0 && <p>Корзина пуста</p>}
+				{orderStatus !== "unordered" && (
+					<div className={responseClass}>
+						<p>{orderResponse}</p>
+					</div>
+				)}
 			</div>
 			<div className={styles.total}>
 				<span>Итого</span>
